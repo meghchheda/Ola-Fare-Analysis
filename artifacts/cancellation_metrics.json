@@ -1,0 +1,122 @@
+{
+  "version": "cancellation-1.0",
+  "selected_model": "Random Forest",
+  "selection_rule": "highest validation PR-AUC",
+  "threshold": 0.4356567393624765,
+  "threshold_rule": "maximises F1 on the validation split",
+  "base_rate": 0.3791058394160584,
+  "test_positive_rate": 0.37908274690609073,
+  "split": {
+    "train": 61814,
+    "validation": 20605,
+    "test": 20605,
+    "strategy": "stratified 60/20/20"
+  },
+  "results": {
+    "Baseline (always predicts the base rate)": {
+      "validation": {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "pr_auc": 0.3791312788158214,
+        "roc_auc": 0.5,
+        "confusion_matrix": {
+          "tn": 12793,
+          "fp": 0,
+          "fn": 7812,
+          "tp": 0
+        }
+      },
+      "test": {
+        "threshold": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "pr_auc": 0.37908274690609073,
+        "roc_auc": 0.5,
+        "confusion_matrix": {
+          "tn": 12794,
+          "fp": 0,
+          "fn": 7811,
+          "tp": 0
+        }
+      }
+    },
+    "Logistic Regression": {
+      "validation": {
+        "threshold": 0.4317629326210857,
+        "precision": 0.379168082318109,
+        "recall": 1.0,
+        "f1": 0.549850431110329,
+        "pr_auc": 0.37950997669727,
+        "roc_auc": 0.4984944003194911,
+        "confusion_matrix": {
+          "tn": 2,
+          "fp": 12791,
+          "fn": 0,
+          "tp": 7812
+        }
+      },
+      "test": {
+        "threshold": 0.4317629326210857,
+        "precision": 0.37912621359223303,
+        "recall": 0.9998719754192805,
+        "f1": 0.5497870543099503,
+        "pr_auc": 0.3804385341747493,
+        "roc_auc": 0.5046379290942354,
+        "confusion_matrix": {
+          "tn": 4,
+          "fp": 12790,
+          "fn": 1,
+          "tp": 7810
+        }
+      }
+    },
+    "Random Forest": {
+      "validation": {
+        "threshold": 0.4356567393624765,
+        "precision": 0.3793623019344804,
+        "recall": 0.9991039426523297,
+        "f1": 0.5499189741421827,
+        "pr_auc": 0.3798261203003512,
+        "roc_auc": 0.5013956325081612,
+        "confusion_matrix": {
+          "tn": 24,
+          "fp": 12769,
+          "fn": 7,
+          "tp": 7805
+        }
+      },
+      "test": {
+        "threshold": 0.4356567393624765,
+        "precision": 0.3791863121567102,
+        "recall": 0.998719754192805,
+        "f1": 0.5496758737316798,
+        "pr_auc": 0.38101448729063314,
+        "roc_auc": 0.5039734901259867,
+        "confusion_matrix": {
+          "tn": 22,
+          "fp": 12772,
+          "fn": 10,
+          "tp": 7801
+        }
+      }
+    }
+  },
+  "features": [
+    "Vehicle_Type",
+    "Pickup_Location",
+    "Drop_Location",
+    "hour",
+    "dow",
+    "day_of_month",
+    "same_area"
+  ],
+  "beats_baseline": false,
+  "limitations": [
+    "Only booking-time features are used, so the model can only learn route, vehicle and time patterns.",
+    "PR-AUC close to the base rate means those features carry little signal in this dataset; predicted probabilities should be read as weak estimates, not decisions.",
+    "One month of data (July 2024): no seasonality or long-term behaviour can be learned."
+  ]
+}

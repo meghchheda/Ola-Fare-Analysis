@@ -1,0 +1,150 @@
+{
+  "version": "anomaly-1.0",
+  "records_analyzed": 103024,
+  "flagged": 1031,
+  "flagged_pct": 1.000737692188228,
+  "contamination": 0.01,
+  "score_threshold": 0.6879448319468325,
+  "features": [
+    "Booking_Value",
+    "Ride_Distance",
+    "value_per_km",
+    "value_vs_vehicle_median",
+    "hour"
+  ],
+  "score_histogram": [
+    {
+      "bin": 0.3916278874245702,
+      "count": 7270
+    },
+    {
+      "bin": 0.40420912057028446,
+      "count": 7284
+    },
+    {
+      "bin": 0.4167903537159988,
+      "count": 9207
+    },
+    {
+      "bin": 0.42937158686171306,
+      "count": 12090
+    },
+    {
+      "bin": 0.4419528200074274,
+      "count": 11646
+    },
+    {
+      "bin": 0.45453405315314166,
+      "count": 10345
+    },
+    {
+      "bin": 0.467115286298856,
+      "count": 9208
+    },
+    {
+      "bin": 0.47969651944457026,
+      "count": 7758
+    },
+    {
+      "bin": 0.4922777525902846,
+      "count": 5769
+    },
+    {
+      "bin": 0.5048589857359989,
+      "count": 4403
+    },
+    {
+      "bin": 0.5174402188817132,
+      "count": 3241
+    },
+    {
+      "bin": 0.5300214520274276,
+      "count": 2474
+    },
+    {
+      "bin": 0.5426026851731418,
+      "count": 1744
+    },
+    {
+      "bin": 0.555183918318856,
+      "count": 1303
+    },
+    {
+      "bin": 0.5677651514645704,
+      "count": 1104
+    },
+    {
+      "bin": 0.5803463846102848,
+      "count": 989
+    },
+    {
+      "bin": 0.592927617755999,
+      "count": 847
+    },
+    {
+      "bin": 0.6055088509017132,
+      "count": 828
+    },
+    {
+      "bin": 0.6180900840474276,
+      "count": 925
+    },
+    {
+      "bin": 0.630671317193142,
+      "count": 788
+    },
+    {
+      "bin": 0.6432525503388562,
+      "count": 804
+    },
+    {
+      "bin": 0.6558337834845704,
+      "count": 760
+    },
+    {
+      "bin": 0.6684150166302849,
+      "count": 672
+    },
+    {
+      "bin": 0.6809962497759992,
+      "count": 510
+    },
+    {
+      "bin": 0.6935774829217134,
+      "count": 380
+    },
+    {
+      "bin": 0.7061587160674276,
+      "count": 291
+    },
+    {
+      "bin": 0.7187399492131421,
+      "count": 190
+    },
+    {
+      "bin": 0.7313211823588563,
+      "count": 103
+    },
+    {
+      "bin": 0.7439024155045706,
+      "count": 59
+    },
+    {
+      "bin": 0.7564836486502848,
+      "count": 32
+    }
+  ],
+  "stability_jaccard_mean": 0.8389450651124276,
+  "flagged_by_status": {
+    "Success": 1019,
+    "Canceled by Driver": 7,
+    "Canceled by Customer": 4,
+    "Driver Not Found": 1
+  },
+  "review_results": null,
+  "limitations": [
+    "No ground-truth labels exist, so accuracy cannot be computed. Flagged records have not been manually reviewed.",
+    "Isolation Forest flags statistically rare combinations; a flag is not evidence of fraud or misconduct.",
+    "Contamination (1%) is a chosen review budget, not an estimate of the true anomaly rate."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "version": "forecast-1.0",
+  "selected": "Random Forest (lags + calendar)",
+  "results": {
+    "Baseline: day-of-week x hour average": {
+      "mae": 11.690972222222221,
+      "rmse": 14.481725107982632
+    },
+    "Random Forest (lags + calendar)": {
+      "mae": 10.045555818737196,
+      "rmse": 12.449985377368735
+    },
+    "Baseline: overall hourly mean": {
+      "mae": 9.96567046957672,
+      "rmse": 12.55855633649054
+    }
+  },
+  "beats_all_baselines": false,
+  "rf_vs_baseline_mae_change": -0.1407424782309734,
+  "history": {
+    "start": "2024-07-01T00:00:00",
+    "end": "2024-07-31T23:00:00",
+    "hours": 744,
+    "days": 31
+  },
+  "split": {
+    "train_end": "2024-07-25T00:00:00",
+    "test_start": "2024-07-25T00:00:00",
+    "test_end": "2024-07-31T23:00:00",
+    "test_hours": 168,
+    "strategy": "chronological: first 24 days train, last 7 days test"
+  },
+  "evaluation": "rolling-origin, 24h recursive forecasts from midnight of each test day",
+  "interval": {
+    "lower": -16.134697683594403,
+    "upper": 14.716660620740397,
+    "level": 0.8,
+    "method": "empirical residual quantiles on test (approximate)"
+  },
+  "mean_hourly_bookings": 138.4731182795699,
+  "features": [
+    "lag_1",
+    "lag_2",
+    "lag_3",
+    "lag_24",
+    "lag_48",
+    "hour",
+    "dow",
+    "is_weekend"
+  ],
+  "limitations": [
+    "Only 31 days of history: weekly patterns have been seen four times, monthly or yearly seasonality never.",
+    "Hourly counts are noisy; if the model does not beat the historical-average baseline, the calendar pattern is the most that can be claimed.",
+    "Forecasts beyond 24-72 hours are recursive and accumulate error."
+  ]
+}

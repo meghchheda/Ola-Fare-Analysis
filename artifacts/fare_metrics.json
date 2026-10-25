@@ -1,0 +1,56 @@
+{
+  "version": "fare-1.0",
+  "selected_model": "Linear Regression",
+  "selection_rule": "lowest MAE on the calibration split",
+  "split": {
+    "train": 38379,
+    "calibration": 12794,
+    "test": 12794,
+    "strategy": "random 60/20/20"
+  },
+  "rows_used": 63967,
+  "results": {
+    "Baseline: global mean": {
+      "mae": 350.81072693630983,
+      "rmse": 537.5346177720003,
+      "r2": -3.0574739733335576e-06
+    },
+    "Baseline: mean per vehicle type": {
+      "mae": 350.90667175769585,
+      "rmse": 537.5653338481812,
+      "r2": -0.0001173461046160007
+    },
+    "Linear Regression": {
+      "mae": 351.0261306474567,
+      "rmse": 538.3501481874907,
+      "r2": -0.003039704909348462
+    },
+    "Random Forest": {
+      "mae": 351.68548647898757,
+      "rmse": 538.5150556576475,
+      "r2": -0.003654301468005272
+    }
+  },
+  "improvement_over_vehicle_baseline": -0.0003404292348232474,
+  "interval_test_coverage": 0.798030326715648,
+  "defensible_estimate": false,
+  "distance_corr_with_value": 0.0018853243597824261,
+  "features": [
+    "Vehicle_Type",
+    "Pickup_Location",
+    "Drop_Location",
+    "Ride_Distance",
+    "hour",
+    "dow",
+    "day_of_month"
+  ],
+  "target_stats": {
+    "mean": 548.4150733972205,
+    "std": 536.6511009568916
+  },
+  "limitations": [
+    "Booking value in this dataset is almost uncorrelated with distance, vehicle type and time (distance correlation = 0.002).",
+    "When R-squared is near zero the model is no better than predicting the average; the output is an illustration of the pipeline, not a fare quote.",
+    "Only fulfilled rides with a recorded distance are used for training."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "version": "segmentation-1.0",
+  "n_clusters": 7,
+  "silhouette": 0.3104972863257632,
+  "silhouette_by_k": {
+    "2": 0.21224805516477205,
+    "3": 0.2398113765289476,
+    "4": 0.26643998809785413,
+    "5": 0.29816433143729437,
+    "6": 0.29601129284716493,
+    "7": 0.3093472725174788,
+    "8": 0.3000178561847359
+  },
+  "selection_rule": "highest silhouette over k=2..8 (sampled)",
+  "min_bookings": 2,
+  "customers_total": 94544,
+  "customers_clustered": 7954,
+  "cluster_sizes": {
+    "Short-distance riders": 1597,
+    "Cancellation-prone riders": 1670,
+    "Frequent riders": 497,
+    "High-value riders": 453,
+    "Long-distance riders": 1876,
+    "Reliable completers": 1708,
+    "Occasional riders": 153
+  },
+  "profiles": [
+    {
+      "cluster": 0,
+      "customers": 1597,
+      "n_bookings": 2.0,
+      "avg_value": 419.7010018785222,
+      "avg_distance": 14.726988102692548,
+      "unfulfilled_rate": 0.1759549154664997,
+      "avg_hour": 16.66374452097683,
+      "total_value": 697.3412648716343,
+      "active_days": 2.0,
+      "name": "Short-distance riders"
+    },
+    {
+      "cluster": 1,
+      "customers": 1670,
+      "n_bookings": 2.0,
+      "avg_value": 396.9508982035928,
+      "avg_distance": 22.022754491017963,
+      "unfulfilled_rate": 0.9931137724550898,
+      "avg_hour": 11.414071856287425,
+      "total_value": 4.432335329341317,
+      "active_days": 2.0,
+      "name": "Cancellation-prone riders"
+    },
+    {
+      "cluster": 2,
+      "customers": 497,
+      "n_bookings": 3.056338028169014,
+      "avg_value": 530.1882964453387,
+      "avg_distance": 23.017605633802816,
+      "unfulfilled_rate": 0.3993628437290409,
+      "avg_hour": 11.39382964453387,
+      "total_value": 1006.7826961770623,
+      "active_days": 2.9597585513078473,
+      "name": "Frequent riders"
+    },
+    {
+      "cluster": 3,
+      "customers": 453,
+      "n_bookings": 2.0022075055187636,
+      "avg_value": 1929.549668874172,
+      "avg_distance": 23.18211920529801,
+      "unfulfilled_rate": 0.1828550404709345,
+      "avg_hour": 11.137969094922738,
+      "total_value": 3091.1854304635763,
+      "active_days": 1.9911699779249448,
+      "name": "High-value riders"
+    },
+    {
+      "cluster": 4,
+      "customers": 1876,
+      "n_bookings": 2.0,
+      "avg_value": 435.39152452025587,
+      "avg_distance": 37.188699360341154,
+      "unfulfilled_rate": 0.21455223880597016,
+      "avg_hour": 11.459754797441365,
+      "total_value": 687.2574626865671,
+      "active_days": 2.0,
+      "name": "Long-distance riders"
+    },
+    {
+      "cluster": 5,
+      "customers": 1708,
+      "n_bookings": 2.0,
+      "avg_value": 427.9882903981265,
+      "avg_distance": 14.30503512880562,
+      "unfulfilled_rate": 0.19233021077283372,
+      "avg_hour": 6.692622950819672,
+      "total_value": 697.3120608899297,
+      "active_days": 2.0,
+      "name": "Reliable completers"
+    },
+    {
+      "cluster": 6,
+      "customers": 153,
+      "n_bookings": 2.0,
+      "avg_value": 453.3529411764706,
+      "avg_distance": 21.34967320261438,
+      "unfulfilled_rate": 0.3627450980392157,
+      "avg_hour": 11.718954248366012,
+      "total_value": 594.9477124183006,
+      "active_days": 1.0,
+      "name": "Occasional riders"
+    }
+  ],
+  "features": [
+    "n_bookings_log",
+    "unfulfilled_rate",
+    "avg_value",
+    "avg_distance",
+    "avg_hour",
+    "active_days"
+  ],
+  "pca_explained_variance": [
+    0.3063578926511063,
+    0.18846895672838504
+  ],
+  "interpretability_notes": [
+    "Only customers with at least 2 bookings are clustered (7,954 of 94,544).",
+    "Segment names are generated from each cluster's profile relative to the other clusters; review them before presenting.",
+    "A low silhouette score indicates overlapping groups: treat segments as soft tendencies.",
+    "The 2-D scatter uses PCA of the scaled features, for visualisation only."
+  ]
+}

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+html, body, #root { min-height: 100%; }
+body {
+  @apply bg-forest text-ivory font-sans antialiased;
+  background-image:
+    linear-gradient(rgba(52, 86, 75, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(52, 86, 75, 0.16) 1px, transparent 1px);
+  background-size: 44px 44px;
+  background-attachment: fixed;
+}
+
+@layer components {
+  .panel { @apply bg-teal/90 border border-line; }
+  .panel-flat { @apply bg-teal-deep/70 border border-line/70; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.16em] text-sage; }
+  .btn { @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold transition-colors duration-150 disabled:opacity-40 disabled:cursor-not-allowed focus:outline-none focus-visible:ring-2 focus-visible:ring-lime/70; }
+  .btn-lime { @apply btn bg-lime text-ink hover:bg-[#d6fa83]; }
+  .btn-coral { @apply btn bg-coral text-ink hover:bg-[#ff9079]; }
+  .btn-ghost { @apply btn border border-line text-ivory hover:bg-ink/60 hover:border-sage; }
+  .field { @apply w-full bg-ink/70 border border-line text-ivory text-sm px-3 py-2.5 focus:outline-none focus:border-lime/80 placeholder:text-sage/60; }
+  .num { @apply font-mono tabular-nums; }
+}
+
+select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23A8BDB3' stroke-width='2.5'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; padding-right: 30px; }
+input[type="date"].field::-webkit-calendar-picker-indicator { filter: invert(0.8); }
+
+* { scrollbar-width: thin; scrollbar-color: #34564B transparent; }
+
+@keyframes dash { to { stroke-dashoffset: -120; } }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.route-anim { stroke-dasharray: 6 10; animation: dash 6s linear infinite; }
+.fade-in { animation: rise 0.35s ease-out both; }
+.pulse-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+.recharts-wrapper { animation: rise 0.5s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .route-anim, .fade-in, .recharts-wrapper, .pulse-dot { animation: none; } }

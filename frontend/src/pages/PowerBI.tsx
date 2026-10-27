@@ -6,7 +6,7 @@ import { useApp } from "../lib/app-context";
 export default function PowerBI() {
   const { config } = useApp();
   const [imgOk, setImgOk] = useState(true);
-  const [embed, setEmbed] = useState(false);
+  const [embed, setEmbed] = useState(true);
   if (!config) return <Loading />;
   const url: string | null = config.power_bi_url;
 

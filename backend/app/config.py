@@ -29,7 +29,10 @@ def _path(env_key: str, default: str) -> Path:
 
 DATASET_PATH = _path("DATASET_PATH", "data/Bookings-100000-Rows.csv")
 ARTIFACT_DIR = _path("MODEL_ARTIFACT_DIR", "artifacts")
-POWER_BI_URL = os.environ.get("POWER_BI_URL", "").strip()
+DEFAULT_POWER_BI_URL = (
+    "https://app.powerbi.com/view?r=eyJrIjoiNTc1YmYxOTctOWUwOC00Y2QwLTk2NWQtMzEwOTIwMGQxYTcwIiwidCI6ImQxZjE0MzQ4LWYxYjUtNGEwOS1hYzk5LTdlYmYyMTNjYmM4MSIsImMiOjEwfQ%3D%3D"
+)
+POWER_BI_URL = os.environ.get("POWER_BI_URL", DEFAULT_POWER_BI_URL).strip()
 REPORT_URL = os.environ.get("REPORT_URL", "").strip()
 REPORT_FILE_PATH = os.environ.get("REPORT_FILE_PATH", "").strip()
 default_cors = (

@@ -32,8 +32,17 @@ ARTIFACT_DIR = _path("MODEL_ARTIFACT_DIR", "artifacts")
 POWER_BI_URL = os.environ.get("POWER_BI_URL", "").strip()
 REPORT_URL = os.environ.get("REPORT_URL", "").strip()
 REPORT_FILE_PATH = os.environ.get("REPORT_FILE_PATH", "").strip()
-CORS_ORIGINS = [o.strip() for o in os.environ.get(
-    "CORS_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173").split(",") if o.strip()]
+default_cors = (
+    "http://localhost:5173,"
+    "http://127.0.0.1:5173,"
+    "https://ola-fare-analysis.vercel.app,"
+    "https://ola-fare-analysis-1.onrender.com"
+)
+raw_cors = os.environ.get("CORS_ORIGINS", default_cors)
+if raw_cors.strip() == "*":
+    CORS_ORIGINS = ["*"]
+else:
+    CORS_ORIGINS = [o.strip() for o in raw_cors.split(",") if o.strip()]
 APP_VERSION = "1.0.0"
 RANDOM_STATE = 42
 

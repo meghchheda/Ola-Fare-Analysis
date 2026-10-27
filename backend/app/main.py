@@ -17,7 +17,14 @@ from .config import (APP_VERSION, ARTIFACT_DIR, CORS_ORIGINS, DATASET_PATH, POWE
 from .data import COLUMN_DESCRIPTIONS, DAY_NAMES, cleaning_log, date_range, load_clean, load_raw
 
 app = FastAPI(title="OLA Ride Insights API", version=APP_VERSION)
-app.add_middleware(CORSMiddleware, allow_origins=CORS_ORIGINS, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=CORS_ORIGINS,
+    allow_origin_regex=r"https://.*\.vercel\.app",
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 def _dataset_df() -> pd.DataFrame:

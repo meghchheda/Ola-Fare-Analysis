@@ -2,7 +2,11 @@
 // Leave `team` empty to show "not provided yet" instead of inventing names.
 export const PROJECT = {
   title: "OLA Ride Insights",
-  team: [] as { name: string; role?: string; roll?: string }[],
-  guide: "" as string, // optional: project guide / supervisor name
-  institution: "" as string, // optional
+  team: [
+    { name: "Megh Chheda", roll: "I015" },
+    { name: "Anit Fadia", roll: "I020" },
+    { name: "Priya Gandhi", roll: "I022" },
+  ],
+  guide: "",
+  institution: "Mukesh Patel School of Technology Management & Engineering (MPSTME)",
 };

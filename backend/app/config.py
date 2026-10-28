@@ -34,7 +34,7 @@ DEFAULT_POWER_BI_URL = (
 )
 POWER_BI_URL = os.environ.get("POWER_BI_URL", DEFAULT_POWER_BI_URL).strip()
 REPORT_URL = os.environ.get("REPORT_URL", "").strip()
-REPORT_FILE_PATH = os.environ.get("REPORT_FILE_PATH", "").strip()
+REPORT_FILE_PATH = os.environ.get("REPORT_FILE_PATH", "docs/DV PROJECT REPORT.docx").strip()
 default_cors = (
     "http://localhost:5173,"
     "http://127.0.0.1:5173,"

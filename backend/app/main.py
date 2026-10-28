@@ -93,10 +93,11 @@ def report_file():
     rf = _report_file()
     if not rf:
         raise HTTPException(404, "No report file has been configured. Set REPORT_FILE_PATH in .env or place it in docs/.")
+    media_type = "application/pdf" if rf.lower().endswith(".pdf") else "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
     return FileResponse(
         rf, 
         filename=os.path.basename(rf), 
-        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        media_type=media_type
     )
 
 
